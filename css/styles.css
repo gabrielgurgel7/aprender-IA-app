@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Mervale";
+  src: url("/assets/fonts/mervale.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/sora.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter";
+}
+
+#app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#app-main #hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4em;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/assets/imgs/webp/bg_caderno.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  z-index: 0;
+}
+
+#hero__title {
+  color: #5e7eff;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke-width: 16px;
+  -webkit-text-stroke-color: #f7ebdd;
+  paint-order: stroke fill;
+  font-family: "Mervale";
+  font-size: clamp(2.4em, 7vw, 6.2em);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+#hero__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  min-height: 64px;
+  padding: 0 8px 0 24px;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid #000;
+  background: #eee;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+#hero__input {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #3f3f3f;
+  font-family: "inter", sans-serif;
+  font-size: clamp(1em, 2.5vw, 1.2em);
+  font-weight: 700;
+}
+
+#hero__input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#hero__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid #000;
+  font-family: "inter", sans-serif;
+  font-size: clamp(0.9em, 2vw, 1.2em);
+  font-weight: 700;
+  color: #f2e9de;
+  transition: all ease 0.3s;
+  white-space: nowrap;
+}
+
+#app-main #hero svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#app-main #hero svg path {
+  fill: none;
+  stroke-width: 2px;
+  stroke-dasharray: 1700px;
+  stroke-dashoffset: 1700px;
+}
+
+/* ── Seção de resposta ── */
+#resposta {
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  line-height: 1.8;
+  color: #1a1a1a;
+}
+#resposta h1,
+h2 {
+  color: #4259b5;
+  font-weight: bold;
+}
+
+#resposta h1 {
+  font-family: "Sora";
+  font-size: clamp(1.6em, 4vw, 2.2em);
+  margin-bottom: 16px;
+}
+#resposta h2 {
+  font-size: clamp(1.3em, 3vw, 1.8em);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+#resposta h3 {
+  font-size: clamp(1.1em, 2.5vw, 1.4em);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+#resposta p {
+  margin-bottom: 16px;
+}
+
+#resposta ul,
+#resposta ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+#resposta li {
+  margin-bottom: 8px;
+}
+#resposta strong {
+  color: #000;
+}
+
+#resposta blockquote {
+  border-left: 4px solid #5e7eff;
+  padding: 12px 20px;
+  margin: 20px 0;
+  background: #f0f4ff;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+#resposta hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 32px 0;
+}
+
+/* ── Download ── */
+#download-section {
+  display: flex;
+  justify-content: center;
+  margin: 24px auto 40px;
+}
+
+#btn-download {
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 1px solid #000;
+  font-family: "inter", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: #f2e9de;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+/* ── Footer ── */
+#app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: #3f3f3f;
+}
+
+#app-footer__copyright {
+  color: #ebe2db;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* ── Estados ── */
+.clicavel {
+  background: #5e7eff;
+}
+.clicavel:hover {
+  background: #4259b5;
+}
+.cursor-bloqueado {
+  cursor: not-allowed;
+  background: #4259b5;
+}
+.hidden {
+  display: none;
+}
+
+/* ══════════════════════════════
+   RESPONSIVO
+══════════════════════════════ */
+
+@media screen and (max-width: 768px) {
+  #app-main #hero {
+    gap: 1.6em;
+  }
+  #hero__form {
+    padding: 0 6px 0 18px;
+    min-height: 56px;
+  }
+  #hero__button {
+    height: 42px;
+    padding: 10px 16px;
+  }
+  #resposta {
+    margin: 24px 16px;
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #app-main #hero {
+    gap: 1.2em;
+  }
+  #hero__form {
+    padding: 0 6px 0 16px;
+    min-height: 52px;
+  }
+  #hero__button {
+    height: 38px;
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
+  #resposta {
+    margin: 16px 12px;
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+}
+
+/* ══════════════════════════════
+   IMPRESSÃO / PDF
+══════════════════════════════ */
+
+@media print {
+  #hero,
+  #app-header,
+  #app-footer,
+  #download-section {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+  #app-main {
+    display: block;
+  }
+  #conteudo-section {
+    display: block !important;
+  }
+
+  #resposta {
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  #resposta h1 {
+    font-size: 20pt;
+    margin-bottom: 12pt;
+  }
+  #resposta h2 {
+    font-size: 16pt;
+    margin-top: 20pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+  }
+  #resposta h3 {
+    font-size: 13pt;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+    page-break-after: avoid;
+  }
+  #resposta p {
+    margin-bottom: 10pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  #resposta p,
+  #resposta li,
+  #resposta blockquote {
+    page-break-inside: avoid;
+  }
+
+  #resposta blockquote {
+    border-left: 3pt solid #5e7eff;
+    padding: 8pt 14pt;
+    background: #f0f4ff;
+  }
+}
