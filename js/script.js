@@ -38,7 +38,7 @@ form.addEventListener("submit", async (e) => {
     // 2. Inicia o polling
     await polling(id);
   } catch (error) {
-    alert("Erro ao enviar.");
+    alert("Erro: " + error.message);
   } finally {
     btnForm.disabled = false;
     btnForm.textContent = "Pesquisar";
