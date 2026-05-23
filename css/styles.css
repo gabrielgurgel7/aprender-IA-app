@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+/* ══════════════════════════════
+   TIPOGRAFIAS
+══════════════════════════════ */
 @font-face {
   font-family: "Mervale";
   src: url("../assets/fonts/mervale.woff2") format("woff2");
@@ -29,6 +32,9 @@ body {
   font-family: "Inter";
 }
 
+/* ══════════════════════════════
+   APP
+══════════════════════════════ */
 #app-main {
   display: flex;
   flex-direction: column;
@@ -127,8 +133,9 @@ body {
   stroke-dasharray: 1700px;
   stroke-dashoffset: 1700px;
 }
-
-/* ── Seção de resposta ── */
+/* ══════════════════════════════
+   SEÇÃO RESPOSTA
+══════════════════════════════ */
 #resposta {
   max-width: 800px;
   width: 100%;
@@ -140,6 +147,7 @@ body {
   line-height: 1.8;
   color: #1a1a1a;
 }
+
 #resposta h1,
 h2 {
   color: #4259b5;
@@ -151,16 +159,19 @@ h2 {
   font-size: clamp(1.6em, 4vw, 2.2em);
   margin-bottom: 16px;
 }
+
 #resposta h2 {
   font-size: clamp(1.3em, 3vw, 1.8em);
   margin-top: 32px;
   margin-bottom: 12px;
 }
+
 #resposta h3 {
   font-size: clamp(1.1em, 2.5vw, 1.4em);
   margin-top: 24px;
   margin-bottom: 8px;
 }
+
 #resposta p {
   margin-bottom: 16px;
 }
@@ -192,8 +203,9 @@ h2 {
   border-top: 1px solid #eee;
   margin: 32px 0;
 }
-
-/* ── Download ── */
+/* ══════════════════════════════
+   DOWNLOAD
+══════════════════════════════ */
 #download-section {
   display: flex;
   justify-content: center;
@@ -212,7 +224,9 @@ h2 {
   transition: all ease 0.3s;
 }
 
-/* ── Footer ── */
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
 #app-footer {
   display: flex;
   flex-direction: column;
@@ -229,7 +243,9 @@ h2 {
   padding: 0 16px;
 }
 
-/* ── Estados ── */
+/* ══════════════════════════════
+   ESTADOS
+══════════════════════════════ */
 .clicavel {
   background: #5e7eff;
 }
@@ -245,9 +261,154 @@ h2 {
 }
 
 /* ══════════════════════════════
+   STATUS DOS AGENTES
+══════════════════════════════ */
+#hero__status {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 480px;
+  width: 90%;
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hero__status-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#hero__spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #5e7eff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#hero__status-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+#hero__agents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.agent__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.agent__label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #aaa;
+  transition: color 0.4s ease;
+}
+
+.agent__line {
+  flex: 1;
+  height: 2px;
+  background: #e0e0e0;
+  margin-bottom: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+
+.agent__line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #5e7eff;
+  transition: left 0.6s ease;
+}
+
+/* Estados ativos */
+.agent.active .agent__icon {
+  background: #eef1ff;
+  border-color: #5e7eff;
+  transform: scale(1.08);
+}
+
+.agent.active .agent__label {
+  color: #5e7eff;
+}
+
+.agent.done .agent__icon {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.agent.done .agent__label {
+  color: #4caf50;
+}
+
+.agent__line.done {
+  background: #5e7eff;
+}
+
+.agent__line.done::after {
+  left: 0;
+}
+/* ══════════════════════════════
    RESPONSIVO
 ══════════════════════════════ */
-
 @media screen and (max-width: 768px) {
   #app-main #hero {
     gap: 1.6em;
@@ -285,11 +446,9 @@ h2 {
     border-radius: 12px;
   }
 }
-
 /* ══════════════════════════════
    IMPRESSÃO / PDF
 ══════════════════════════════ */
-
 @media print {
   #hero,
   #app-header,
