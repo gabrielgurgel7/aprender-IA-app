@@ -32,6 +32,7 @@
 
 body {
   font-family: "Inter";
+  background-color: #f7ebdd;
 }
 
 /* ══════════════════════════════
@@ -39,8 +40,13 @@ body {
 ══════════════════════════════ */
 #app-header {
   display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
 
   width: 100%;
+  height: auto;
 
   padding: 16px;
 
@@ -453,13 +459,22 @@ body {
   }
 
   #hero__form {
-    padding: 0 6px 0 16px;
+    width: calc(100% - 24px);
+    height: 100px;
+    margin: 0 16px;
+    padding: 12px 16px;
     min-height: 52px;
+    position: relative;
+    flex-direction: column;
+    border-radius: 24px;
   }
   #hero__button {
     height: 38px;
     padding: 8px 14px;
     font-size: 0.9em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
   #resposta {
     margin: 16px 12px;
