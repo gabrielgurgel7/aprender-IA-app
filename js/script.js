@@ -1,3 +1,4 @@
+// #region CONSTANTES
 const form = document.querySelector("#hero__form");
 const input = document.querySelector("#hero__input");
 const btnForm = document.querySelector("#hero__button");
@@ -12,6 +13,7 @@ const agentRedator = document.querySelector("#agent-redator");
 const agentLine1 = document.querySelector("#agent-line-1");
 const agentLine2 = document.querySelector("#agent-line-2");
 let temaAtual = "";
+// #endregion
 
 function setAgentStep(step) {
   const agents = [agentPesquisador, agentVerificador, agentRedator];

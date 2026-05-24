@@ -1,9 +1,11 @@
+/* ══════════════════════════════
+   RESET GLOBAL
+══════════════════════════════ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 /* ══════════════════════════════
    TIPOGRAFIAS
 ══════════════════════════════ */
@@ -35,6 +37,23 @@ body {
 /* ══════════════════════════════
    APP
 ══════════════════════════════ */
+#app-header {
+  display: flex;
+
+  width: 100%;
+
+  padding: 16px;
+
+  position: absolute;
+  z-index: 1;
+
+  background-color: #f7ebdd;
+}
+
+#app-header img {
+  height: 60px;
+}
+
 #app-main {
   display: flex;
   flex-direction: column;
@@ -148,20 +167,10 @@ body {
   color: #1a1a1a;
 }
 
-#resposta h1,
-h2 {
-  color: #4259b5;
-  font-weight: bold;
-}
-
-#resposta h1 {
-  font-family: "Sora";
-  font-size: clamp(1.6em, 4vw, 2.2em);
-  margin-bottom: 16px;
-}
-
 #resposta h2 {
   font-size: clamp(1.3em, 3vw, 1.8em);
+  color: #4259b5;
+  font-weight: bold;
   margin-top: 32px;
   margin-bottom: 12px;
 }
@@ -223,7 +232,6 @@ h2 {
   cursor: pointer;
   transition: all ease 0.3s;
 }
-
 /* ══════════════════════════════
    FOOTER
 ══════════════════════════════ */
@@ -242,7 +250,6 @@ h2 {
   text-align: center;
   padding: 0 16px;
 }
-
 /* ══════════════════════════════
    ESTADOS
 ══════════════════════════════ */
@@ -259,7 +266,6 @@ h2 {
 .hidden {
   display: none;
 }
-
 /* ══════════════════════════════
    STATUS DOS AGENTES
 ══════════════════════════════ */
@@ -378,8 +384,9 @@ h2 {
   background: #5e7eff;
   transition: left 0.6s ease;
 }
-
-/* Estados ativos */
+/* ══════════════════════════════
+   ESTADOS ATIVOS
+══════════════════════════════ */
 .agent.active .agent__icon {
   background: #eef1ff;
   border-color: #5e7eff;
@@ -431,6 +438,20 @@ h2 {
   #app-main #hero {
     gap: 1.2em;
   }
+
+  #hero__title {
+    color: #5e7eff;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-text-stroke-width: 16px;
+    -webkit-text-stroke-color: #f7ebdd;
+    paint-order: stroke fill;
+    font-family: "Mervale";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
   #hero__form {
     padding: 0 6px 0 16px;
     min-height: 52px;
